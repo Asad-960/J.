@@ -1,0 +1,150 @@
+/* ================= FOOTER ================= */
+.footer {
+  background: #f5f5f5;
+  font-size: 13px;
+  padding-top: 40px;
+}
+
+/* ================= DESKTOP ================= */
+.footer-desktop {
+  display: block;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 50px;
+}
+
+/* HEADINGS */
+.footer h4 {
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+/* TEXT */
+.footer p {
+  margin: 6px 0;
+  cursor: pointer;
+  color: #111;
+}
+
+/* ================= NEWSLETTER ================= */
+.newsletter .input-box {
+  display: flex;
+  margin-top: 10px;
+}
+
+.input-box input {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+.input-box button {
+  width: 50px;
+  background: #111;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.small {
+  font-size: 11px;
+  margin-top: 10px;
+  line-height: 1.4;
+}
+
+/* ================= PAYMENTS ================= */
+.payments {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.payments img {
+  height: 20px;
+}
+
+/* ================= BOTTOM ================= */
+.footer-bottom {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.footer-bottom p {
+  font-size: 12px;
+}
+
+.copyright {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 12px;
+}
+
+.copyright span {
+  color: red;
+}
+
+/* ================= MOBILE ================= */
+.footer-mobile {
+  display: none;
+}
+
+/* NEWSLETTER */
+.newsletter-box {
+  background: #d6cdc4;
+  padding: 15px;
+}
+
+/* ACCORDION */
+.accordion {
+  border-top: 1px solid #ddd;
+}
+
+.accordion-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.accordion-content {
+  padding: 0 15px 10px;
+}
+
+.accordion-content p {
+  margin: 8px 0;
+}
+
+/* MOBILE PAYMENTS */
+.payments.mobile {
+  justify-content: center;
+  margin: 20px 0;
+}
+
+/* MOBILE BOTTOM */
+.footer-bottom.mobile {
+  text-align: center;
+  padding: 15px;
+  font-size: 12px;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 1024px) {
+
+  /* HIDE DESKTOP */
+  .footer-desktop {
+    display: none;
+  }
+
+  /* SHOW MOBILE */
+  .footer-mobile {
+    display: block;
+  }
+
+}
