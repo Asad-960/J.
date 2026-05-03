@@ -1,0 +1,152 @@
+:root {
+    /* --- EXACT REPLICA COLOR PALETTE --- */
+    --jdot-black: #000000;
+    --jdot-white: #ffffff;
+    --jdot-bg-grey: #f8f8f8;
+    /* The slight off-white for product image backgrounds */
+    --jdot-text-main: #222222;
+    --jdot-text-muted: #777777;
+    /* Used for old prices */
+    --jdot-border-color: #e5e5e5;
+    --jdot-sale-red: #d92d20;
+    /* The exact shade for their -20% / -30% badges */
+
+    /* --- TYPOGRAPHY --- */
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Open Sans', sans-serif;
+
+    /* --- SPACING & SIZING --- */
+    --nav-height: 80px;
+    --radius-none: 0px;
+    /* High-end fashion sites rarely use rounded corners */
+    --transition-base: 0.3s ease-in-out;
+}
+
+/* --- RESET & BASE --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--jdot-text-main);
+    background-color: var(--jdot-white);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    /* J. uses all-caps for collection titles */
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* --- GLOBAL BUTTONS --- */
+.j-btn-primary {
+    background-color: var(--jdot-black);
+    color: var(--jdot-white);
+    border: 1px solid var(--jdot-black);
+    padding: 12px 24px;
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    transition: all var(--transition-base);
+    border-radius: var(--radius-none);
+    /* Keep it sharp */
+    width: 100%;
+    /* Often full width on product cards */
+}
+
+.j-btn-primary:hover {
+    background-color: var(--jdot-white);
+    color: var(--jdot-black);
+}
+
+/* --- PRODUCT GRID LAYOUT (The Men's Collection View) --- */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* 4 items per row on Desktop */
+    gap: 20px;
+    padding: 40px;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+@media (max-width: 1024px) {
+    .product-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 15px;
+        gap: 10px;
+    }
+}
+
+/* --- EXACT PRODUCT CARD STYLING --- */
+.product-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.product-image-wrapper {
+    background-color: var(--jdot-bg-grey);
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.sale-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: var(--jdot-sale-red);
+    color: var(--jdot-white);
+    padding: 4px 8px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    font-family: var(--font-heading);
+}
+
+.product-title {
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.product-price-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.price-regular {
+    text-decoration: line-through;
+    color: var(--jdot-text-muted);
+}
+
+.price-sale {
+    color: var(--jdot-sale-red);
+    font-weight: 700;
+}
