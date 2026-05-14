@@ -64,7 +64,9 @@
 }
 
 .payments img {
-  height: 20px;
+  width: 180px;
+  max-width: 100%;
+  height: auto;
 }
 
 /* ================= BOTTOM ================= */

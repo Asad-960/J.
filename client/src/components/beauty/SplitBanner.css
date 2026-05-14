@@ -1,0 +1,72 @@
+.split-banner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.split-item {
+  position: relative;
+  min-height: 520px;
+  overflow: hidden;
+}
+
+.split-item img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.split-item:hover img {
+  transform: scale(1.07);
+  transition: 1s;
+  
+}
+.split-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50px;
+  max-width: min(420px, calc(100% - 80px));
+  color: #fff;
+  transform: translateY(-50%);
+}
+
+.split-overlay h2 {
+  margin-bottom: 18px;
+  font-size: 42px;
+}
+
+.split-overlay p {
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+.split-overlay button {
+  padding: 14px 30px;
+  border: 0;
+  background: #fff;
+  color: #000;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .split-banner {
+    grid-template-columns: 1fr;
+  }
+
+  .split-item {
+    min-height: 420px;
+  }
+
+  .split-overlay {
+    left: 25px;
+    max-width: calc(100% - 50px);
+  }
+
+  .split-overlay h2 {
+    font-size: 26px;
+  }
+
+  .split-overlay p {
+    font-size: 14px;
+  }
+}

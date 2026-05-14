@@ -1,0 +1,16 @@
+.promo-banner {
+  width: 100%;
+  
+}
+
+.promo-banner img {
+  display: block;
+  width: 100%;
+}
+.promo-banner:hover img {
+  transform: scale(1.07);
+  transition: 1s;
+  
+}
+
+

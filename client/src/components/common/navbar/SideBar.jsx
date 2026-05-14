@@ -5,7 +5,9 @@ import { Link } from "react-router-dom";
 function Sidebar({ open, setOpen, type }) {
   if (!open) return null;
 
-  const data = navigationData[type] || {};
+  const data = navigationData[type];
+  const images = data ? data.images : [];
+  const subNav = data ? data.subNav : [];
 
   return (
     <>
@@ -27,7 +29,7 @@ function Sidebar({ open, setOpen, type }) {
 
         {/* IMAGE ROW */}
         <div className="sidebar-images">
-          {data.images?.map((item, i) => (
+          {images.map((item, i) => (
             <div key={i} className="img-box">
               <img src={item.img} alt="" />
               <p>{item.label}</p>
@@ -37,7 +39,7 @@ function Sidebar({ open, setOpen, type }) {
 
         {/* MENU */}
         <ul className="menu-list">
-          {data.subNav?.map((item, i) => (
+          {subNav.map((item, i) => (
             <li key={i}>
               {item} <span>&gt;</span>
             </li>

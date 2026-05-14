@@ -1,4 +1,5 @@
 import { useState } from "react";
+import footerPayments from "../../../assets/footer-payments-grouped.svg";
 import "./Footer.css";
 
 function Footer() {
@@ -65,10 +66,7 @@ function Footer() {
 
             {/* PAYMENT ICONS */}
             <div className="payments">
-              <img src="/payments/visa.png" alt="visa" />
-              <img src="/payments/mastercard.png" alt="mastercard" />
-              <img src="/payments/paypak.png" alt="paypak" />
-              <img src="/payments/amex.png" alt="amex" />
+              <img src={footerPayments} alt="Accepted payment methods" />
             </div>
           </div>
 
@@ -133,10 +131,7 @@ function Footer() {
 
         {/* PAYMENT ICONS */}
         <div className="payments mobile">
-          <img src="/payments/visa.png" alt="" />
-          <img src="/payments/mastercard.png" alt="" />
-          <img src="/payments/paypak.png" alt="" />
-          <img src="/payments/amex.png" alt="" />
+          <img src={footerPayments} alt="Accepted payment methods" />
         </div>
 
         {/* BOTTOM */}
