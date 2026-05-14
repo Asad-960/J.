@@ -1,0 +1,96 @@
+.admin-container {
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid #000;
+    padding-bottom: 20px;
+    margin-bottom: 40px;
+}
+
+.admin-header h1 {
+    letter-spacing: 4px;
+    font-size: 1.5rem;
+}
+
+.form-section {
+    background: #f4f4f4;
+    padding: 30px;
+    margin-bottom: 50px;
+}
+
+.form-section h3 {
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.admin-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.admin-form input, .admin-form textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    font-size: 0.85rem;
+}
+
+.admin-form textarea {
+    grid-column: span 2;
+    height: 80px;
+}
+
+.save-btn {
+    grid-column: span 2;
+    padding: 15px;
+    background: #000;
+    color: white;
+    border: none;
+    cursor: pointer;
+    letter-spacing: 2px;
+}
+
+.product-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.product-table th {
+    text-align: left;
+    padding: 15px;
+    border-bottom: 1px solid #000;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+
+.product-table td {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    font-size: 0.9rem;
+}
+
+.edit-btn, .delete-btn {
+    background: none;
+    border: 1px solid #000;
+    padding: 5px 15px;
+    margin-right: 10px;
+    cursor: pointer;
+    font-size: 0.75rem;
+}
+
+.delete-btn {
+    color: white;
+    background: #000;
+}
+
+.edit-btn:hover {
+    background: #eee;
+}

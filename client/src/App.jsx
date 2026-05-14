@@ -10,6 +10,8 @@ import Women from "./pages/Women";
 import Men from "./pages/Men";
 import Beauty from "./pages/FragranceBeauty";   
 import Teens from "./pages/Teens";
+import Admin from "./pages/Admin/Admin";
+import Login from "./pages/Login/Login";
 
 
 
@@ -27,8 +29,7 @@ function App() {
 
   return (
     <div className="app-container">
-
-      <TopNavbar />
+      {/* <TopNavbar />
       <MainNavbar type={type} />
       <SubNavbar type={type} />
 
@@ -40,9 +41,9 @@ function App() {
           <Route path="/teens" element={<Teens />} />
           <Route path="*" element={<Women />} />
         </Routes>
-      </main>
-
-      <Footer />
+      </main> */}
+      <Admin />
+      {/* <Footer /> */}
 
     </div>
   );

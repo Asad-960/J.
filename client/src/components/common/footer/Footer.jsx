@@ -65,10 +65,10 @@ function Footer() {
 
             {/* PAYMENT ICONS */}
             <div className="payments">
-              <img src="/payments/visa.png" alt="visa" />
-              <img src="/payments/mastercard.png" alt="mastercard" />
+              <img src="https://www.junaidjamshed.com/cdn/shop/files/footer-payments-grouped.svg?v=1765779328&width=395" alt="visa" />
+              {/* <img src="/payments/mastercard.png" alt="mastercard" />
               <img src="/payments/paypak.png" alt="paypak" />
-              <img src="/payments/amex.png" alt="amex" />
+              <img src="/payments/amex.png" alt="amex" /> */}
             </div>
           </div>
 
