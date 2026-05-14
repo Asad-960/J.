@@ -1,0 +1,87 @@
+.collection-product-card {
+  position: relative;
+  display: block;
+  color: #111;
+  text-decoration: none;
+}
+
+.collection-product-card img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  display: block;
+  object-fit: cover;
+  background: #f4f2f0;
+  transition: transform 0.3s ease;
+}
+
+.collection-product-card:hover img {
+  transform: scale(1.02);
+}
+
+.collection-product-card h3 {
+  margin: 12px 0 4px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.collection-product-price {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 12px;
+  line-height: 1.3;
+}
+
+.collection-product-price span {
+  color: #111;
+  font-weight: 500;
+}
+.wishlist-btn,
+.bag-btn {
+  position: absolute;
+  border: none;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 50%;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+/* Heart icon (top-right) */
+.wishlist-btn {
+  top: 12px;
+  right: 12px;
+  width: 32px;
+  height: 32px;
+}
+
+/* Bag icon (bottom-right) */
+.bag-btn {
+  bottom: 72px;
+  right: 12px;
+  width: 32px;
+  height: 32px;
+}
+
+/* Hover effect */
+.wishlist-btn:hover,
+.bag-btn:hover {
+  transform: scale(1.08);
+}
+
+
+.collection-product-card:hover .wishlist-btn,
+.collection-product-card:hover .bag-btn {
+  opacity: 1;
+  visibility: visible;
+}

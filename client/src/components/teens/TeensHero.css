@@ -1,0 +1,19 @@
+.teens-hero {
+  width: 100%;
+  background: #eee7e2;
+}
+
+.teens-hero-image {
+  width: 100%;
+  min-height: 300px;
+  max-height: 430px;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+@media (max-width: 768px) {
+  .teens-hero-image {
+    min-height: 220px;
+  }
+}

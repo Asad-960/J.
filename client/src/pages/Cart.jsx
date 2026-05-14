@@ -1,8 +1,48 @@
-const CartPage = () => {
-    return (
-        <div>
-            <h1>Cart's Page</h1>
+import { FiX } from "react-icons/fi";
+import CartItem from "../components/cart/CartItem";
+import { useCart } from "../context/CartContext";
+import "./Cart.css";
+
+function Cart() {
+  const { cartItems, isCartOpen, closeCart, subtotal } = useCart();
+
+  if (!isCartOpen) return null;
+
+  return (
+    <div className="cart-overlay" onClick={closeCart}>
+      <div className="cart-drawer" onClick={(event) => event.stopPropagation()}>
+        <div className="cart-header">
+          <h2>Side cart</h2>
+          <button type="button" onClick={closeCart}>
+            <FiX />
+          </button>
         </div>
-    );
+
+        <div className="cart-content">
+          {cartItems.length === 0 ? (
+            <p className="empty-cart">Your cart is empty.</p>
+          ) : (
+            cartItems.map((item) => (
+              <CartItem key={item.id} item={item} />
+            ))
+          )}
+        </div>
+
+        <div className="cart-footer">
+          <div className="subtotal-row">
+            <span>Subtotal</span>
+            <strong>PKR. {subtotal.toLocaleString()}</strong>
+          </div>
+
+          <p>Taxes included and shipping calculated at checkout.</p>
+
+          <button type="button" className="checkout-btn">
+            CHECKOUT
+          </button>
+        </div>
+      </div>
+    </div>
+  );
 }
-export default CartPage;
+
+export default Cart;
