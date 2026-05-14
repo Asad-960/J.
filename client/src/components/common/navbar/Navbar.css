@@ -43,6 +43,10 @@ body {
 
 /* ================= MAIN NAV ================= */
 .main-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #fff;
   border-bottom: 1px solid #e5e5e5;
 }
 
@@ -90,13 +94,48 @@ body {
   font-size: 20px;
 }
 
+.bag-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: inherit;
+  font: inherit;
+  position: relative;
+}
+
+.bag-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: #111;
+  color: #fff;
+  font-size: 12px;
+}
+
 /* MOBILE MENU */
 .mobile-menu {
   display: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: inherit;
+  font: inherit;
+  padding: 0;
 }
 
 /* ================= SUB NAV ================= */
 .sub-navbar {
+  position: sticky;
+  top: 68px;
+  z-index: 999;
+  background: #fff;
   border-bottom: 1px solid #e5e5e5;
 }
 
@@ -185,6 +224,7 @@ body {
   /* SIDEBAR */
   .overlay {
     position: fixed;
+    z-index: 1100;
     width: 100%;
     height: 100%;
     background: rgba(0,0,0,0.4);
@@ -194,6 +234,7 @@ body {
 
   .sidebar {
     position: fixed;
+    z-index: 1101;
     top: 0;
     left: -100%;
     width: 95%;
@@ -206,14 +247,14 @@ body {
   /* TOP CATEGORY ROW IN SIDEBAR */
 .sidebar-top-links {
   display: flex;
-  justify-content: center;   /* 🔥 instead of space-between */
-  gap: 19px;                 /* 🔥 reduce space */
+  justify-content: center;  
+  gap: 19px;              
   align-items: center;
 
-  font-size: 12px;           /* 🔥 slightly smaller */
+  font-size: 12px;      
   font-weight: 600;
 
-  margin: 10px 0;            /* 🔥 reduce vertical spacing */
+  margin: 10px 0;          
 }
 
 /* LINKS STYLE */
@@ -243,7 +284,7 @@ body {
     border-bottom: 1px solid #eee;
   }
  .top-left {
-    display: none;   /* 🔥 hide left */
+    display: none; 
   }
 
   .top-inner {

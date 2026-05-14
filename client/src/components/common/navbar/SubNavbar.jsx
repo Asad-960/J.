@@ -1,7 +1,8 @@
 import { navigationData } from "./data/navigationData";
 
 function SubNavbar({ type }) {
-  const items = navigationData[type]?.subNav || [];
+  const data = navigationData[type];
+  const items = data ? data.subNav : [];
 
   return (
     <div className="sub-navbar">

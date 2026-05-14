@@ -1,0 +1,100 @@
+.teen-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  background: #fff;
+}
+
+.teen-feature-card {
+  position: relative;
+  min-height: 330px;
+  display: block;
+  overflow: hidden;
+  color: #fff;
+  text-decoration: none;
+  background: #d9d9d9;
+}
+
+.teen-feature-card-large {
+  grid-column: span 3;
+  min-height: 470px;
+}
+
+.teen-feature-card-small {
+  grid-column: span 2;
+}
+
+.teen-feature-card img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center top;
+  filter: brightness(0.72);
+  transition: transform 0.35s ease;
+}
+
+.teen-feature-card:hover img {
+  transform: scale(1.03);
+}
+
+.teen-feature-copy {
+  position: absolute;
+  left: 28px;
+  bottom: 78px;
+  z-index: 1;
+  text-transform: uppercase;
+}
+
+.teen-feature-copy h2 {
+  margin: 0 0 8px;
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.teen-feature-copy p,
+.teen-feature-copy span {
+  display: block;
+  margin: 0 0 14px;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.teen-feature-copy span {
+  margin: 0;
+  width: fit-content;
+  border-bottom: 1px solid transparent;
+}
+
+.teen-feature-card:hover .teen-feature-copy span {
+  border-bottom-color: currentColor;
+}
+
+@media (max-width: 900px) {
+  .teen-feature-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .teen-feature-card-large,
+  .teen-feature-card-small {
+    grid-column: span 1;
+    min-height: 360px;
+  }
+}
+
+@media (max-width: 560px) {
+  .teen-feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .teen-feature-card-large,
+  .teen-feature-card-small {
+    min-height: 320px;
+  }
+
+  .teen-feature-copy {
+    left: 20px;
+    bottom: 46px;
+  }
+}

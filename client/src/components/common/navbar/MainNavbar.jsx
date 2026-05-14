@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { FiShoppingBag, FiMenu } from "react-icons/fi";
 import logo from "../../../assets/logo.png";
+import { useCart } from "../../../context/CartContext";
 
 import Sidebar from "./SideBar";
 
@@ -9,6 +11,7 @@ import "./Navbar.css";
 function MainNavbar({ type }) {
   const [open, setOpen] = useState(false);
   const location = useLocation();
+  const { openCart, totalItems } = useCart();
 
   return (
     <>
@@ -32,9 +35,14 @@ function MainNavbar({ type }) {
           </div>
 
           {/* MOBILE MENU */}
-          <div className="mobile-menu" onClick={() => setOpen(true)}>
-            MENU
-          </div>
+          <button
+            type="button"
+            className="mobile-menu"
+            onClick={() => setOpen(true)}
+            aria-label="Open menu"
+          >
+            <FiMenu />
+          </button>
 
           {/* LOGO */}
           <div className="nav-center">
@@ -45,7 +53,10 @@ function MainNavbar({ type }) {
           <div className="nav-right">
             <span>SEARCH</span>
             <span className="wishlist">WISHLIST</span>
-            <span>BAG</span>
+            <button type="button" className="bag-button" onClick={openCart}>
+              <FiShoppingBag />
+              {totalItems > 0 && <span className="bag-count">{totalItems}</span>}
+            </button>
           </div>
         </div>
       </div>
