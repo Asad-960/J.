@@ -83,6 +83,7 @@ def login():
     if not user or not check_password_hash(user[1], password):
         return jsonify({'message': 'Invalid credentials'}), 401
     
+    # TODO: Implement JWT or session-based authentication here
     
     return jsonify({'message': 'Login successful'}), 200
 

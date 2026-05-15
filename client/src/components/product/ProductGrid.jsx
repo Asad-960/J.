@@ -8,18 +8,33 @@ function ProductGrid({
   activeTab = 0,
   seeAllHref = "#",
 }) {
+  // Show only the first 6 products
+  const displayedProducts = products.slice(0, 6);
+
+  // Debug: check products in browser console
+  console.log("Products received in ProductGrid:", products);
+  console.log("Products displayed in ProductGrid:", displayedProducts);
+
   return (
     <section className="collection-trending-section">
+      {/* Header Section */}
       <div className="collection-trending-top">
-        <h2 className="collection-section-title collection-trending-title">{title}</h2>
+        {/* Section Title */}
+        <h2 className="collection-section-title collection-trending-title">
+          {title}
+        </h2>
 
+        {/* Tabs */}
         {tabs.length > 0 && (
-          <div className="collection-trending-tabs" aria-label={`${title} categories`}>
+          <div
+            className="collection-trending-tabs"
+            aria-label={`${title} categories`}
+          >
             {tabs.map((tab, index) => (
               <button
-                className={index === activeTab ? "active" : ""}
-                type="button"
                 key={tab}
+                type="button"
+                className={index === activeTab ? "active" : ""}
               >
                 {tab}
               </button>
@@ -27,15 +42,31 @@ function ProductGrid({
           </div>
         )}
 
-        <a className="collection-see-all" href={seeAllHref}>
+        {/* See All Link */}
+        <a
+          href={seeAllHref}
+          className="collection-see-all"
+        >
           SEE ALL
         </a>
       </div>
 
+      {/* Products Grid */}
       <div className="collection-products-grid">
-        {products.map((item) => (
-          <ProductCard key={item.id} item={item} />
-        ))}
+        {/* If no products are available */}
+        {!products || products.length === 0 ? (
+          <div className="no-products-message">
+            <p>No products found in this category.</p>
+          </div>
+        ) : (
+          /* Show only first 6 products */
+          displayedProducts.map((item, index) => (
+            <ProductCard
+              key={item.id || index}
+              item={item}
+            />
+          ))
+        )}
       </div>
     </section>
   );
