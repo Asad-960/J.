@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { FiShoppingBag, FiMenu } from "react-icons/fi";
-import logo from "../../../assets/logo.png";
-import { useCart } from "../../../context/CartContext";
+import {  FiMenu } from "react-icons/fi";
+import logo from "../../../assets/logo.svg";
+import { useCart } from "../../../context/useCart";
 
 import Sidebar from "./SideBar";
 
@@ -12,6 +12,7 @@ function MainNavbar({ type }) {
   const [open, setOpen] = useState(false);
   const location = useLocation();
   const { openCart, totalItems } = useCart();
+  const beautyActive = ["/beauty", "/fragrances"].includes(location.pathname);
 
   return (
     <>
@@ -20,7 +21,7 @@ function MainNavbar({ type }) {
         <div className="mobile-category">
           <Link className={location.pathname === "/" ? "active" : ""} to="/">WOMEN</Link>
           <Link className={location.pathname === "/men" ? "active" : ""} to="/men">MEN</Link>
-          <Link className={location.pathname === "/beauty" ? "active" : ""} to="/beauty">FRAGRANCE & BEAUTY</Link>
+          <Link className={beautyActive ? "active" : ""} to="/beauty">FRAGRANCE & BEAUTY</Link>
           <Link className={location.pathname === "/teens" ? "active" : ""} to="/teens">TEENS</Link>
         </div>
 
@@ -30,7 +31,7 @@ function MainNavbar({ type }) {
           <div className="nav-left desktop-only">
             <Link className={location.pathname === "/" ? "active" : ""} to="/">WOMEN</Link>
             <Link className={location.pathname === "/men" ? "active" : ""} to="/men">MEN</Link>
-            <Link className={location.pathname === "/beauty" ? "active" : ""} to="/beauty">FRAGRANCE & BEAUTY</Link>
+            <Link className={beautyActive ? "active" : ""} to="/beauty">FRAGRANCE & BEAUTY</Link>
             <Link className={location.pathname === "/teens" ? "active" : ""} to="/teens">TEENS</Link>
           </div>
 
@@ -53,10 +54,19 @@ function MainNavbar({ type }) {
           <div className="nav-right">
             <span>SEARCH</span>
             <span className="wishlist">WISHLIST</span>
-            <button type="button" className="bag-button" onClick={openCart}>
-              <FiShoppingBag />
-              {totalItems > 0 && <span className="bag-count">{totalItems}</span>}
-            </button>
+            <button
+  type="button"
+  className="bag-button"
+  onClick={openCart}
+  aria-label="Open cart"
+>
+  BAG
+  {totalItems > 0 && (
+    <span className="bag-count">
+      {totalItems}
+    </span>
+  )}
+</button>
           </div>
         </div>
       </div>

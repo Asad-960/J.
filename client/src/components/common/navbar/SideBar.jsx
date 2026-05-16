@@ -39,11 +39,15 @@ function Sidebar({ open, setOpen, type }) {
 
         {/* MENU */}
         <ul className="menu-list">
-          {subNav.map((item, i) => (
-            <li key={i}>
-              {item} <span>&gt;</span>
-            </li>
-          ))}
+          {subNav.map((item, i) => {
+            const href = item === "FRAGRANCES" ? "/fragrances" : null;
+
+            return (
+              <li key={i}>
+                {href ? <Link to={href}>{item}</Link> : item} <span>&gt;</span>
+              </li>
+            );
+          })}
         </ul>
       </div>
     </>

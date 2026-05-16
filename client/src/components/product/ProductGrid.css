@@ -47,18 +47,21 @@
   text-align: center;
 }
 
+/* PRODUCTS GRID - Always 6 products in one row */
 .collection-products-grid {
   display: grid;
   grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 4px;
 }
 
+/* Keep 6 columns on tablet */
 @media (max-width: 1024px) {
   .collection-products-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(6, minmax(0, 1fr));
   }
 }
 
+/* Keep 6 columns on mobile as well */
 @media (max-width: 640px) {
   .collection-trending-top {
     grid-template-columns: 1fr;
@@ -76,6 +79,6 @@
   }
 
   .collection-products-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(6, minmax(0, 1fr));
   }
 }

@@ -1,12 +1,19 @@
 import "./CartItem.css";
-import { useCart } from "../../context/CartContext";
+import { useCart } from "../../context/useCart";
 
 function CartItem({ item }) {
-  const { decreaseQty, increaseQty, removeFromCart } = useCart();
+  const {
+    decreaseQty,
+    increaseQty,
+    removeFromCart,
+  } = useCart();
 
   return (
     <div className="cart-item">
-      <img src={item.image} alt={item.name} />
+      <img
+        src={item.image}
+        alt={item.name}
+      />
 
       <div className="cart-item-info">
         <h3>{item.name}</h3>
@@ -18,15 +25,29 @@ function CartItem({ item }) {
         <p>Product ID: {item.id}</p>
 
         <div className="qty-box">
-          <button type="button" onClick={() => decreaseQty(item.id)}>-</button>
+          <button
+            type="button"
+            onClick={() => decreaseQty(item.id)}
+          >
+            -
+          </button>
+
           <span>{item.quantity}</span>
-          <button type="button" onClick={() => increaseQty(item.id)}>+</button>
+
+          <button
+            type="button"
+            onClick={() => increaseQty(item.id)}
+          >
+            +
+          </button>
         </div>
 
         <button
           type="button"
           className="remove-link"
-          onClick={() => removeFromCart(item.id)}
+          onClick={() =>
+            removeFromCart(item.id)
+          }
         >
           REMOVE
         </button>

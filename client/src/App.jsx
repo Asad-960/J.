@@ -8,7 +8,8 @@ import Footer from "./components/common/footer/Footer";
 
 import Women from "./pages/Women";
 import Men from "./pages/Men";
-import Beauty from "./pages/FragranceBeauty";
+import BeautyAndFragrance from "./pages/fragrance/BeautyAndFragrance";
+import Fragrances from "./pages/fragrance/Fragrances";
 import Teens from "./pages/Teens";
 import Cart from "./pages/Cart";
 
@@ -19,6 +20,7 @@ function App() {
     "/": "women",
     "/men": "men",
     "/beauty": "beauty",
+    "/fragrances": "beauty",
     "/teens": "teens"
   };
 
@@ -34,7 +36,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Women />} />
           <Route path="/men" element={<Men />} />
-          <Route path="/beauty" element={<Beauty />} />
+          <Route path="/beauty" element={<BeautyAndFragrance />} />
+          <Route path="/fragrances" element={<Fragrances />} />
           <Route path="/teens" element={<Teens />} />
           <Route path="*" element={<Women />} />
         </Routes>
