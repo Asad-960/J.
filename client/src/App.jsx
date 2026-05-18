@@ -1,17 +1,16 @@
 import { Routes, Route, useLocation } from "react-router-dom";
 import "./index.css";
 
-import TopNavbar from "./components/common/navbar/TopNavbar";
-import MainNavbar from "./components/common/navbar/MainNavbar";
-import SubNavbar from "./components/common/navbar/SubNavbar";
-import Footer from "./components/common/footer/Footer";
+import { TopNavbar, MainNavbar, SubNavbar, Footer } from "./components";
 
-import Women from "./pages/Women";
-import Men from "./pages/Men";
+import Women from "./pages/Women/Women";
+import Men from "./pages/Men/Men";
 import BeautyAndFragrance from "./pages/fragrance/BeautyAndFragrance";
 import Fragrances from "./pages/fragrance/Fragrances";
 import Teens from "./pages/Teens";
 import Cart from "./pages/Cart";
+import Admin from "./pages/Admin/Admin";
+import Login from "./pages/Login/Login";
 
 function App() {
   const location = useLocation();
@@ -26,11 +25,17 @@ function App() {
 
   const type = pathToType[location.pathname];
 
+  const isAdminRoute = location.pathname.startsWith("/adminpanel") || location.pathname === "/adminpanel" || location.pathname.startsWith("/login") || location.pathname === "/login";
+
   return (
     <div className="app-container">
-      <TopNavbar />
-      <MainNavbar type={type} />
-      <SubNavbar type={type} />
+      {!isAdminRoute && (
+        <>
+          <TopNavbar />
+          <MainNavbar type={type} />
+          <SubNavbar type={type} />
+        </>
+      )}
 
       <main className="main-content">
         <Routes>
@@ -40,11 +45,17 @@ function App() {
           <Route path="/fragrances" element={<Fragrances />} />
           <Route path="/teens" element={<Teens />} />
           <Route path="*" element={<Women />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="adminpanel/*" element={<Admin />} />
         </Routes>
       </main>
 
-      <Footer />
-      <Cart />
+      {!isAdminRoute && (
+        <>
+          <Footer />
+          <Cart />
+        </>
+      )}
     </div>
   );
 }

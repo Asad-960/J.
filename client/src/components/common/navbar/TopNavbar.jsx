@@ -12,7 +12,7 @@ function TopNavbar() {
         </div>
 
         <div className="top-center">
-          Step Into the Season with Our Latest Arrival –
+          Step Into the Season with Our Latest Arrivals –
           <span className="shop-now">Shop Now</span>
         </div>
 

@@ -52,21 +52,20 @@ function MainNavbar({ type }) {
 
           {/* RIGHT */}
           <div className="nav-right">
-            <span>SEARCH</span>
-            <span className="wishlist">WISHLIST</span>
+            <span className="search-text">SEARCH</span>
+            <span className="wishlist-text">
+              WISHLIST
+              <span className="badge">0</span>
+            </span>
             <button
-  type="button"
-  className="bag-button"
-  onClick={openCart}
-  aria-label="Open cart"
->
-  BAG
-  {totalItems > 0 && (
-    <span className="bag-count">
-      {totalItems}
-    </span>
-  )}
-</button>
+              type="button"
+              className="bag-button"
+              onClick={openCart}
+              aria-label="Open cart"
+            >
+              BAG
+              <span className="badge">{totalItems || 0}</span>
+            </button>
           </div>
         </div>
       </div>

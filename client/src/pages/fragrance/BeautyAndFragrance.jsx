@@ -4,7 +4,7 @@ import PromoBanner from "../../components/beauty/PromoBanner";
 import SplitBanner from "../../components/beauty/Splitbanner";
 import ProductGrid from "../../components/product/ProductGrid";
 import { fragranceTabs } from "../../data/collectionData";
-
+import heroVideo from "../../assets/hero.mp4";
 import lipstickBanner from "../../assets/liptick.webp";
 import hairmistBanner from "../../assets/hairmist.webp";
 import jananBanner from "../../assets/showergel.webp";
@@ -23,7 +23,7 @@ function BeautyAndFragrance() {
 
   return (
     <div className="beauty-page">
-      <HeroVideo />
+      <HeroVideo video={heroVideo} isBtn={true} />
 
       <PromoBanner image={lipstickBanner} alt="Lipstick collection" />
       <PromoBanner image={hairmistBanner} alt="Hair mist collection" />

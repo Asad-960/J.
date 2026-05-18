@@ -1,11 +1,9 @@
 /* ================= GLOBAL ================= */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
 body {
   margin: 0;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-
   color: #111;
-   cursor:default
+  cursor:default
 }
 
 .container {
@@ -18,27 +16,25 @@ body {
 .top-navbar {
   background: #d6cdc4;
   border-bottom: 1px solid #e5e5e5;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .top-inner {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  height: 44px;
-  font-size: 13px;
-
+  height: 38px;
+  font-size: 12px;
 }
 
 .top-left {
   display: flex;
-  gap: 18px;  
-  font-size: 13px; /* FIXED spacing */
+  gap: 24px;  
+  font-size: 12px;
 }
 
 .top-center {
   justify-self: center;
-
+  font-size: 12px;
 }
 
 .shop-now {
@@ -69,88 +65,80 @@ body {
 .nav-left {
   display: flex;
   align-items: center;
-  gap: 25px; 
-  transform: scaleY(1.23);             /* Space between WOMEN, MEN, FRAGRANCE & BEAUTY, TEENS */
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 640;
+  gap: 28px; 
+  font-weight: bold;
   text-transform: uppercase;
-  font-size: 14px; /* Matches the visual scale in image_791c50.png */
-  
-  /* THE TIGHT LOCKUP */
-  letter-spacing: -0.8px; /* This creates the compressed look you want */
-  
-  /* RENDER TIGHTER */
-  font-kerning: normal;
-  -webkit-font-smoothing: antialiased;
-  color: #000000; /* Use black as seen in the image */
-  text-decoration: none;
-  line-height: 1;
-  padding-bottom: 5px;      /* Remove extra downward spacing */
+  font-size: 14px;
+  color: #000;
 }
 
 .nav-left a {
   text-decoration: none;
-  color: #111;
+  color: #000;
+  padding-bottom: 2px;
 }
 
 .nav-left a.active {
   text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 1.5px;
 }
 
 /* CENTER */
 .nav-center {
-  /* Using flex is more reliable than justify-self for vertical centering */
   display: flex;
   align-items: center; 
   justify-content: center;
-  height: 59px;
+  height: 60px;
 }
 
 .logo-img {
-  /* Remove the bottom padding entirely */
-  height: 50px; /* Adjusted from 88px to better match the original's scale */
+  height: 54px;
   width: auto;
   display: block;
-  padding: 0; 
-  margin: 0;
 }
+
 /* RIGHT */
 .nav-right {
   justify-self: end;
   display: flex;
-  gap: 18px;
-  font-size: 15px;
+  align-items: center;
+  gap: 22px;
+  font-size: 14px;
   font-weight: 500;
-  color: #000000;
-   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-letter-spacing: -0.6px; /* Slightly tighter spacing for icons */
-  padding-bottom: 4px; /* Remove extra downward spacing */
-  padding-left: 2px;
+  color: #000;
+}
+
+.search-text, .wishlist-text {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
 }
 
 .bag-button {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
   border: none;
   background: none;
   cursor: pointer;
   color: inherit;
   font: inherit;
-  position: relative;
+  padding: 0;
 }
 
-.bag-count {
-  display: inline-flex;
+.badge {
+  display: flex;
   align-items: center;
   justify-content: center;
-  min-width: 20px;
-  height: 20px;
-  padding: 0 6px;
-  border-radius: 999px;
-  background: #111;
-  color: #fff;
-  font-size: 12px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #d6cdc4;
+  color: #000;
+  font-size: 10px;
+  margin-left: 3px;
+  margin-top: -10px;
+  font-weight: bold;
 }
 
 /* MOBILE MENU */
@@ -185,9 +173,9 @@ letter-spacing: -0.6px; /* Slightly tighter spacing for icons */
 .sub-inner p,
 .sub-nav-link {
   margin: 0;
-  font-size: 15px;
+  font-size: 14px;
   white-space: nowrap;     
-  font-weight: 500;   /* FIX */
+  font-weight: 500;
 }
 
 .sub-nav-link {
@@ -200,30 +188,34 @@ letter-spacing: -0.6px; /* Slightly tighter spacing for icons */
 }
 
 .country {
-  padding-left: 10px;
   position: absolute;
   left: 32px;
-  font-size: 12px;
-}
-.country {
-  position: absolute;
-  left: 24px;
   display: inline-flex;
   align-items: center;
   gap: 6px;
   height: 38px;
-  font-size: 13px;
-  font-weight: 700;
+  font-size: 14px;
+  font-weight: 500;
   color: #111;
   white-space: nowrap;
 }
 
 .country-flag {
-  padding-left: 4px;
   width: 17px;
   height: 14px;
   object-fit: cover;
   display: block;
+}
+
+.sub-right {
+  position: absolute;
+  right: 32px;
+  display: inline-flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 500;
+  color: #111;
+  cursor: pointer;
 }
 
 /* ================= MOBILE ================= */

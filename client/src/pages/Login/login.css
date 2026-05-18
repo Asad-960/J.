@@ -1,3 +1,8 @@
+/* ==========================================================================
+   Authentication Layout & Container Styles
+   ========================================================================== */
+
+/* Main wrapper to center the authentication card on the screen */
 .auth-container {
     display: flex;
     justify-content: center;
@@ -5,9 +10,9 @@
     min-height: 100vh;
     background-color: #f9f9f9;
     font-family: 'Playfair Display', serif;
-    /* Or clean sans-serif */
 }
 
+/* Container for the form elements */
 .auth-card {
     background: white;
     padding: 40px;
@@ -16,6 +21,10 @@
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
     text-align: center;
 }
+
+/* ==========================================================================
+   Typography & Branding
+   ========================================================================== */
 
 .brand-logo {
     font-size: 3rem;
@@ -36,6 +45,11 @@ h2 {
     margin-bottom: 30px;
 }
 
+/* ==========================================================================
+   Form Inputs & Controls
+   ========================================================================== */
+
+/* Wrapper for individual input fields and their labels */
 .input-group {
     text-align: left;
     margin-bottom: 20px;
@@ -58,10 +72,16 @@ h2 {
     transition: border 0.3s;
 }
 
+/* Input focus state for accessibility and visual feedback */
 .input-group input:focus {
     border-color: #000;
 }
 
+/* ==========================================================================
+   Buttons & Interactive Elements
+   ========================================================================== */
+
+/* Primary submission button styling */
 .primary-btn {
     width: 100%;
     padding: 15px;
@@ -79,6 +99,7 @@ h2 {
     opacity: 0.8;
 }
 
+/* Toggle link to switch between Login and Signup modes */
 .toggle-text {
     margin-top: 20px;
     font-size: 0.8rem;
@@ -87,6 +108,11 @@ h2 {
     color: #555;
 }
 
+/* ==========================================================================
+   Feedback & Error Messages
+   ========================================================================== */
+
+/* Styling for server response messages (e.g., login failed) */
 .feedback-msg {
     color: #c00;
     font-size: 0.8rem;
