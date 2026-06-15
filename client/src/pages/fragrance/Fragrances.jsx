@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { FiGrid, FiColumns } from "react-icons/fi";
-import ProductCard from "../../components/product/ProductCard";
+import { ProductCard } from "../../components";
 import "./fragrances.css";
 
 const fragranceFilters = ["For Men", "For Women", "Gift Set", "Attar", "Body Spray"];

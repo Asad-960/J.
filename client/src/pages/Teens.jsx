@@ -1,8 +1,5 @@
 import { useState, useEffect } from "react";
-import TeensHero from "../components/teens/TeensHero";
-import TeenFeatureGrid from "../components/teens/TeenFeatureGrid";
-import CategorySection from "../components/product/CategorySection";
-import ProductGrid from "../components/product/ProductGrid";
+import { TeensHero, TeenFeatureGrid, CategorySection, ProductGrid } from "../components";
 import {
   teenCategories,
   teenFeatureItems,

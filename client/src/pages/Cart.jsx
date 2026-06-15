@@ -11,7 +11,6 @@ function Cart() {
     subtotal,
   } = useCart();
 
-  // If drawer is closed, show nothing
   if (!isCartOpen) {
     return null;
   }
@@ -27,7 +26,6 @@ function Cart() {
           event.stopPropagation()
         }
       >
-        {/* Header */}
         <div className="cart-header">
           <h2>Cart</h2>
 
@@ -39,7 +37,6 @@ function Cart() {
           </button>
         </div>
 
-        {/* Products */}
         <div className="cart-content">
           {cartItems.length === 0 ? (
             <p className="empty-cart">
@@ -54,8 +51,6 @@ function Cart() {
             ))
           )}
         </div>
-
-        {/* Footer */}
         <div className="cart-footer">
           <div className="subtotal-row">
             <span>Subtotal</span>

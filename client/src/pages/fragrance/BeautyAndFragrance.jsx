@@ -1,8 +1,5 @@
 import { useState, useEffect } from "react";
-import HeroVideo from "../../components/beauty/HeroVideo";
-import PromoBanner from "../../components/beauty/PromoBanner";
-import SplitBanner from "../../components/beauty/Splitbanner";
-import ProductGrid from "../../components/product/ProductGrid";
+import { HeroVideo, PromoBanner, SplitBanner, ProductGrid } from "../../components";
 import { fragranceTabs } from "../../data/collectionData";
 import heroVideo from "../../assets/hero.mp4";
 import lipstickBanner from "../../assets/liptick.webp";

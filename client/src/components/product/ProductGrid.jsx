@@ -7,6 +7,7 @@ function ProductGrid({
   products = [],
   activeTab = 0,
   seeAllHref = "#",
+  onTabChange,
 }) {
   // Show only the first 6 products
   const displayedProducts = products.slice(0, 6);
@@ -30,17 +31,24 @@ function ProductGrid({
             className="collection-trending-tabs"
             aria-label={`${title} categories`}
           >
-            {tabs.map((tab, index) => (
-              <button
-                key={tab}
-                type="button"
-                className={index === activeTab ? "active" : ""}
-              >
-                {tab}
-              </button>
-            ))}
+            {tabs.map((tab, index) => {
+              const isActive = onTabChange
+                ? (activeTab === tab || activeTab === index)
+                : (index === activeTab);
+              return (
+                <button
+                  key={tab}
+                  type="button"
+                  className={isActive ? "active" : ""}
+                  onClick={() => onTabChange && onTabChange(tab, index)}
+                >
+                  {tab}
+                </button>
+              );
+            })}
           </div>
         )}
+
 
         {/* See All Link */}
         <a

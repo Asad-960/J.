@@ -1,0 +1,61 @@
+.store-locator-section {
+  width: 100%;
+  position: relative;
+}
+
+.store-locator-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.store-locator-bg {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.store-locator-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 30px 50px;
+  text-align: center;
+  backdrop-filter: blur(5px);
+  width: max-content;
+  max-width: 90%;
+}
+
+.store-locator-title {
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+  color: #000;
+  text-transform: uppercase;
+}
+
+.store-locator-text {
+  font-size: 14px;
+  font-weight: 400;
+  color: #333;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .store-locator-overlay {
+    padding: 15px 25px;
+  }
+
+  .store-locator-title {
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+
+  .store-locator-text {
+    font-size: 11px;
+  }
+}
